@@ -1,0 +1,12 @@
+{
+  "name": "SR Electricals",
+  "slug": "sr-electricals",
+  "tagline": "Wires, lighting, MCBs and switchgear from trusted brands in Deoghar, quoted on WhatsApp.",
+  "accent": "#1d4ed8",
+  "repo": "https://github.com/akkiverse/sr-electricals",
+  "live_url": "https://sr-electricals-akkiverse.vercel.app",
+  "version": "0.1.0",
+  "launched": "",
+  "tests_passed": 0,
+  "tests_total": 0
+}
