@@ -4,7 +4,7 @@
 - **Requested by:** Founder (board notes)
 - **Date:** 2026-10-31
 - **Release:** (not yet released)
-- **Pull request:** (opened at the end of the build)
+- **Pull request:** https://github.com/akkiverse/sr-electricals/pull/1
 
 ## Why
 The founder approved the SR Electricals idea (GO, 70/100) for build: an attractive shop website for SR Electrical, Deoghar, that shows the brands, best-selling categories, owner and location, turns visits into WhatsApp quote requests, and gives the owner an admin page to keep brands and items current.
