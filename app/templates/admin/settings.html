@@ -1,0 +1,47 @@
+{% extends "admin/_layout.html" %}
+{% from "admin/_field.html" import text, err %}
+{% block admin %}
+<section class="aform-section" aria-labelledby="photo-h">
+  <h2 id="photo-h">Your photo</h2>
+  <div class="owner-edit">
+    {% if s.owner_photo %}<img class="owner-photo" src="{{ s.owner_photo }}" alt="Current photo of {{ s.owner_name }}" width="120" height="120">
+    {% else %}<span class="owner-photo owner-initials" role="img" aria-label="No photo yet">{{ s.owner_initials }}</span>{% endif %}
+    <form method="post" action="/admin/owner-photo" enctype="multipart/form-data" class="aform" novalidate>
+      <div class="field{% if errors.get('photo') %} has-error{% endif %}">
+        <label for="f-photo">Upload a photo <span class="muted">(JPEG, PNG or WebP, up to 2 MB)</span></label>
+        <input id="f-photo" name="photo" type="file" accept="image/jpeg,image/png,image/webp" {% if errors.get('photo') %}aria-invalid="true" aria-describedby="e-photo"{% endif %}>
+        {{ err("photo", errors) }}
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit">{{ icon("image", 18) }} Save photo</button>
+        {% if s.owner_photo %}<button class="btn btn-ghost" type="submit" name="remove" value="true">Remove photo</button>{% endif %}
+      </div>
+    </form>
+  </div>
+</section>
+<section class="aform-section" aria-labelledby="details-h">
+  <h2 id="details-h">Shop details</h2>
+  <form class="aform" method="post" action="/admin/settings" novalidate>
+    {{ text("tagline", "Tagline", v.tagline, errors, "One line under the shop name on the home page", attrs='maxlength="160"') }}
+    {{ text("owner_name", "Owner name", v.owner_name, errors, attrs='maxlength="60" autocomplete="name"') }}
+    <div class="two">
+      {{ text("phone", "Shop phone", v.phone, errors, "10-digit mobile number", type="tel", attrs='inputmode="tel" maxlength="16"') }}
+      {{ text("whatsapp", "WhatsApp number", v.whatsapp, errors, "Quote lists are sent here", type="tel", attrs='inputmode="tel" maxlength="16"') }}
+    </div>
+    <fieldset class="checks{% if errors.get('open_days') %} has-error{% endif %}"><legend>Open on</legend>
+      <div class="days">{% for d in days %}<label class="check"><input type="checkbox" name="open_days" value="{{ d }}" {% if d in v.open_days %}checked{% endif %}> <span>{{ d }}</span></label>{% endfor %}</div>
+      {{ err("open_days", errors) }}
+    </fieldset>
+    <div class="two">
+      {{ text("opens", "Opens at", v.opens, errors, "24-hour time, for example 10:30", type="time") }}
+      {{ text("closes", "Closes at", v.closes, errors, "For example 19:00 for 7 PM", type="time") }}
+    </div>
+    <div class="field">
+      <label for="f-story">About the shop</label>
+      <textarea id="f-story" name="story" rows="5" maxlength="1200">{{ v.story }}</textarea>
+    </div>
+    <p class="muted">Brands and best-selling categories are managed on the <a href="/admin/brands">Brands</a> and <a href="/admin/categories">Categories</a> pages.</p>
+    <div class="form-actions"><button class="btn btn-primary" type="submit">{{ icon("check", 18) }} Save shop details</button></div>
+  </form>
+</section>
+{% endblock %}

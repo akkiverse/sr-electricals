@@ -1,0 +1,11 @@
+{% extends "admin/_layout.html" %}
+{% block admin %}
+<div class="confirm">
+  <p>Remove <strong>{{ thing }}</strong> from the site? This can't be undone, but you can add it again later.</p>
+  {% if warning %}<p class="banner banner-warn">{{ warning }}</p>{% endif %}
+  <form method="post" action="{{ action }}" class="form-actions">
+    <button class="btn btn-danger" type="submit">{{ icon("trash", 18) }} Yes, remove it</button>
+    <a class="btn btn-ghost" href="{{ back }}">No, keep it</a>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "admin/_layout.html" %}
+{% from "admin/_field.html" import text, check, err %}
+{% block admin %}
+<form class="aform" method="post" action="{{ '/admin/products/' ~ p.id if p else '/admin/products' }}" enctype="multipart/form-data" novalidate>
+  {{ text("name", "Product name", v.name, errors, "For example: Polycab FR PVC house wire 2.5 sq mm", attrs='maxlength="120" required') }}
+  <div class="field{% if errors.get('brand_slug') %} has-error{% endif %}">
+    <label for="f-brand_slug">Brand</label>
+    <select id="f-brand_slug" name="brand_slug" required {% if errors.get('brand_slug') %}aria-invalid="true" aria-describedby="e-brand_slug"{% endif %}>
+      <option value="">Choose a brand</option>
+      {% for b in cat.brands %}<option value="{{ b.slug }}" {% if b.slug == v.brand_slug %}selected{% endif %}>{{ b.name }}</option>{% endfor %}
+    </select>
+    {{ err("brand_slug", errors) }}
+  </div>
+  <div class="field{% if errors.get('category_slug') %} has-error{% endif %}">
+    <label for="f-category_slug">Category</label>
+    <select id="f-category_slug" name="category_slug" required {% if errors.get('category_slug') %}aria-invalid="true" aria-describedby="e-category_slug"{% endif %}>
+      <option value="">Choose a category</option>
+      {% for c in cat.categories %}<option value="{{ c.slug }}" {% if c.slug == v.category_slug %}selected{% endif %}>{{ c.name }}</option>{% endfor %}
+    </select>
+    {{ err("category_slug", errors) }}
+  </div>
+  <div class="field{% if errors.get('specs') %} has-error{% endif %}">
+    <label for="f-specs">Details <span class="muted">(optional, one per line)</span></label>
+    <p class="hint" id="h-specs">For example: Size: 2.5 sq mm</p>
+    <textarea id="f-specs" name="specs" rows="5" aria-describedby="h-specs{% if errors.get('specs') %} e-specs{% endif %}">{{ v.specs }}</textarea>
+    {{ err("specs", errors) }}
+  </div>
+  <div class="two">
+    {{ text("price_inr", "Price in rupees (optional)", v.price_inr, errors, "Leave empty to show Price on request", attrs='inputmode="numeric" maxlength="12"') }}
+    {{ text("unit", "Sold as (optional)", v.unit, errors, "For example: per 90 m coil", attrs='maxlength="60"') }}
+  </div>
+  <div class="field{% if errors.get('image') %} has-error{% endif %}">
+    <label for="f-image">Picture <span class="muted">(JPEG, PNG or WebP, up to 2 MB)</span></label>
+    {% if p and p.image %}<img class="thumb" src="{{ p.image }}" alt="Current picture of {{ p.name }}" width="120" height="90">{% endif %}
+    <input id="f-image" name="image" type="file" accept="image/jpeg,image/png,image/webp" {% if errors.get('image') %}aria-invalid="true" aria-describedby="e-image"{% endif %}>
+    {{ err("image", errors) }}
+    {% if p and p.image %}{{ check("remove_image", "Remove the current picture", False) }}{% endif %}
+  </div>
+  <fieldset class="checks"><legend>Options</legend>
+    {{ check("active", "Show on the site", v.active) }}
+    {{ check("bulk_available", "Bulk available", v.bulk_available) }}
+    {{ check("best_selling", "Best-selling (shows on the home page)", v.best_selling) }}
+  </fieldset>
+  <div class="form-actions">
+    <button class="btn btn-primary" type="submit">{{ icon("check", 18) }} Save product</button>
+    <a class="btn btn-ghost" href="/admin/products">Cancel</a>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="wrap quote" data-quote-page>
+  <h1 class="page-title">Your quote list</h1>
+  <p class="muted">Your list stays on this phone or computer. Nothing is sent until you press Send on WhatsApp.</p>
+  <div class="empty" data-quote-empty>
+    <span class="empty-icon">{{ icon("list", 32) }}</span>
+    <h2>Your quote list is empty</h2>
+    <p>Add products from the catalogue, then send the whole list to us on WhatsApp for a rate.</p>
+    <a class="btn btn-primary" href="/products">{{ icon("search", 18) }} Browse the catalogue</a>
+  </div>
+  <form class="quote-form" data-quote-form novalidate>
+    <ul class="qlist" data-quote-list aria-label="Items in your quote list"></ul>
+    <div class="quote-who">
+      <div class="field">
+        <label for="buyer-name">Your name <span class="muted">(optional)</span></label>
+        <input id="buyer-name" name="name" type="text" maxlength="80" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="buyer-type">I am a <span class="muted">(optional)</span></label>
+        <select id="buyer-type" name="buyer_type">
+          <option value="">Choose one</option>
+          {% for t in BUYER_TYPES %}<option value="{{ t }}">{{ t }}</option>{% endfor %}
+        </select>
+      </div>
+    </div>
+    <p class="field-error" data-quote-error hidden></p>
+    <div class="quote-actions">
+      <button type="submit" class="btn btn-wa btn-send" data-quote-send disabled>{{ icon("bolt", 18) }} Send on WhatsApp</button>
+      <button type="button" class="btn btn-ghost" data-quote-clear>{{ icon("trash", 18) }} Clear list</button>
+    </div>
+  </form>
+  <template data-quote-row>
+    <li class="qrow">
+      <div class="qrow-name"><a data-f="link"></a><small data-f="brand"></small></div>
+      <div class="qrow-qty">
+        <label class="sr-only" data-f="qlabel">Quantity</label>
+        <div class="stepper">
+          <button type="button" class="step" data-step="-1" aria-label="One less">{{ icon("minus", 18) }}</button>
+          <input type="number" inputmode="numeric" min="1" max="9999" step="1" data-f="qty" aria-label="Quantity">
+          <button type="button" class="step" data-step="1" aria-label="One more">{{ icon("plus", 18) }}</button>
+        </div>
+        <button type="button" class="icon-btn" data-remove aria-label="Remove">{{ icon("trash", 18) }}</button>
+      </div>
+      <p class="field-error" data-f="error" hidden></p>
+    </li>
+  </template>
+</section>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% from "_icons.html" import icon %}
+<ul class="chips" aria-label="Quick filters by category">
+  <li><a class="chip" href="{{ query_for(category='') }}" {% if not sel_category %}aria-current="true"{% endif %}>All</a></li>
+  {% for c in cat.shown_categories() %}
+  <li><a class="chip" href="{{ query_for(category=c.slug) }}" {% if c.slug == sel_category %}aria-current="true"{% endif %}>{{ c.name }}</a></li>
+  {% endfor %}
+</ul>
+{% if products %}
+<p class="count">{{ products|length }} product{{ "s" if products|length != 1 }}{% if q or sel_category or sel_brand %} · <a href="/products">Clear filters</a>{% endif %}</p>
+<ul class="pgrid">
+  {% for p in products %}{% include "partials/product_card.html" %}{% endfor %}
+</ul>
+<p class="note">{{ icon("tag", 16) }} Stock and rates change daily. Add what you need to your quote list and we'll reply on WhatsApp with today's price.</p>
+{% else %}
+<div class="empty">
+  <span class="empty-icon">{{ icon("search", 32) }}</span>
+  <h2>No products match</h2>
+  <p>We may still have it. Ask us, or try a shorter search such as a size or a brand.</p>
+  <div class="empty-actions">
+    <a class="btn btn-ghost" href="/products">{{ icon("x", 18) }} Clear filters</a>
+    <a class="btn btn-wa" rel="noopener" target="_blank" href="{{ s.wa_link }}?text={{ ('Hello ' ~ s.shop_name ~ ', do you have ' ~ (q or 'this item') ~ '?')|urlencode }}">{{ icon("chat", 18) }} Ask us on WhatsApp</a>
+  </div>
+</div>
+{% endif %}

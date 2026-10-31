@@ -1,0 +1,71 @@
+{% from "_icons.html" import icon %}<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ SITE_URL }}{{ path }}">
+<meta name="theme-color" content="#1d4ed8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1530" media="(prefers-color-scheme: dark)">
+{% if noindex %}<meta name="robots" content="noindex">{% endif %}
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/static/fonts/barlow-semi-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/static/app.css?v=1">
+<script>try{var t=localStorage.getItem("sr_theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
+{{ local_business }}
+<script src="/static/htmx.min.js" defer></script>
+<script src="/static/quote-core.js?v=1" defer></script>
+<script src="/static/app.js?v=1" defer></script>
+{% block head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}" data-wa="{{ s.wa_number }}" data-shop="{{ s.shop_name }}">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="logo" href="/" aria-label="{{ s.shop_name }}, home">
+      <span class="logo-mark" aria-hidden="true">{{ icon("bolt", 20) }}</span>
+      <span class="logo-text"><strong>{{ s.shop_name }}</strong><small>Deoghar</small></span>
+    </a>
+    <nav class="topnav" aria-label="Main">
+      <a href="/products" {% if path.startswith("/products") or path.startswith("/category") or path.startswith("/brand") %}aria-current="page"{% endif %}>{{ icon("search", 18) }}<span>Products</span></a>
+      <a href="/quote" class="quote-link" {% if path == "/quote" %}aria-current="page"{% endif %}>{{ icon("list", 18) }}<span>Quote list</span><span class="badge" data-quote-count aria-label="items in your quote list">0</span></a>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Switch theme">
+        <span class="when-light">{{ icon("moon", 18) }}</span><span class="when-dark">{{ icon("sun", 18) }}</span>
+      </button>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+{% block main %}{% endblock %}
+</main>
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-name"><span class="logo-mark sm" aria-hidden="true">{{ icon("bolt", 14) }}</span> {{ s.shop_name }}</p>
+      <address>{{ s.address }}</address>
+      <p class="muted">{{ s.hours_text }}</p>
+    </div>
+    <div class="footer-links">
+      <a href="{{ s.tel_link }}">{{ icon("phone", 18) }} Call {{ s.phone_display }}</a>
+      <a href="{{ s.wa_link }}" rel="noopener" target="_blank">{{ icon("chat", 18) }} WhatsApp {{ s.phone_display }}</a>
+      <a href="/products">{{ icon("search", 18) }} All products</a>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <p>Brand names belong to their owners and are shown to say which brands we stock.</p>
+    <p><a href="{{ HUB_URL }}">Part of Idea Studio by AkkiVerse</a></p>
+  </div>
+</footer>
+{% block actionbar %}
+<div class="actionbar" role="region" aria-label="Contact the shop">
+  <a class="btn btn-ghost" href="{{ s.tel_link }}">{{ icon("phone", 18) }} Call</a>
+  <a class="btn btn-wa" href="{{ s.wa_link }}" rel="noopener" target="_blank">{{ icon("chat", 18) }} WhatsApp</a>
+</div>
+{% endblock %}
+<div class="toast" role="status" aria-live="polite" data-toast></div>
+</body>
+</html>

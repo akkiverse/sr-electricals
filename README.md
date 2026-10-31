@@ -13,8 +13,8 @@ A fast, mobile-first shop website for SR Electrical, Tiwary Chowk, Deoghar. Visi
 
 | | |
 |---|---|
-| Stage | Building the MVP |
-| Acceptance tests | 0 of 0 passing ([report](docs/quality/TEST-REPORT.md)) |
+| Stage | Live: v0.1.0 (released 2026-10-31) |
+| Acceptance tests | 39 of 39 passing ([report](docs/quality/TEST-REPORT.md)) |
 | Latest change | [CR-0001](docs/changes/CR-0001-mvp.md) First version (MVP) |
 
 ## Stack

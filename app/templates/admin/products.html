@@ -1,0 +1,22 @@
+{% extends "admin/_layout.html" %}
+{% block admin %}
+<a class="btn btn-primary" href="/admin/products/new">{{ icon("plus", 18) }} Add a product</a>
+<ul class="alist">
+  {% for p in cat.products %}
+  {% set b = cat.brand(p.brand_slug) %}
+  <li class="arow">
+    <img src="{{ image_for(p) }}" alt="" width="56" height="42" loading="lazy">
+    <div class="arow-main">
+      <strong>{{ p.name }}</strong>
+      <small>{{ b.name if b else "No brand" }} · {% if cat.is_visible(p) %}<span class="ok">Shown</span>{% else %}<span class="off">Hidden</span>{% endif %}{% if p.best_selling %} · Best-selling{% endif %}</small>
+    </div>
+    <div class="arow-actions">
+      <a class="btn btn-ghost sm" href="/admin/products/{{ p.id }}">{{ icon("edit", 16) }} Edit</a>
+      <a class="btn btn-danger sm" href="/admin/products/{{ p.id }}/remove">{{ icon("trash", 16) }} Remove</a>
+    </div>
+  </li>
+  {% else %}
+  <li class="empty"><p>No products yet. Add your first one.</p></li>
+  {% endfor %}
+</ul>
+{% endblock %}

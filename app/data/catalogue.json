@@ -1,0 +1,816 @@
+{
+ "data_version": 1,
+ "settings": {
+  "story": "SR Electrical has served Deoghar from Tiwary Chowk on College Road for years. Sanjay Singh and his team supply dealers, contractors and government contractors in bulk, and help families pick the right light, switch or wire for their home. Genuine products from brands you know, honest rates and quick answers on WhatsApp."
+ },
+ "brands": [
+  {
+   "slug": "polycab",
+   "name": "Polycab",
+   "logo": "",
+   "active": true
+  },
+  {
+   "slug": "kei",
+   "name": "KEI",
+   "logo": "",
+   "active": true
+  },
+  {
+   "slug": "hpl",
+   "name": "HPL",
+   "logo": "",
+   "active": true
+  },
+  {
+   "slug": "benlo",
+   "name": "Benlo",
+   "logo": "",
+   "active": true
+  },
+  {
+   "slug": "anchor",
+   "name": "Anchor",
+   "logo": "",
+   "active": true
+  },
+  {
+   "slug": "havells",
+   "name": "Havells",
+   "logo": "",
+   "active": true
+  }
+ ],
+ "categories": [
+  {
+   "slug": "wires-and-cables",
+   "name": "Wires and cables",
+   "description": "House wire, flexible cable, armoured and submersible cable in every common size.",
+   "image": "/static/img/cat-wires-and-cables.svg",
+   "best_selling": true,
+   "active": true
+  },
+  {
+   "slug": "indoor-lighting",
+   "name": "Indoor lighting",
+   "description": "LED bulbs, battens, panels and downlights for homes, shops and offices.",
+   "image": "/static/img/cat-indoor-lighting.svg",
+   "best_selling": true,
+   "active": true
+  },
+  {
+   "slug": "outdoor-lighting",
+   "name": "Outdoor lighting",
+   "description": "Street lights, flood lights and gate lights built for rain and dust.",
+   "image": "/static/img/cat-outdoor-lighting.svg",
+   "best_selling": true,
+   "active": true
+  },
+  {
+   "slug": "mcbs-and-distribution-boards",
+   "name": "MCBs and distribution boards",
+   "description": "MCBs, RCCBs, isolators and DBs to protect every circuit.",
+   "image": "/static/img/cat-mcbs-and-distribution-boards.svg",
+   "best_selling": true,
+   "active": true
+  },
+  {
+   "slug": "switches-and-switchgear",
+   "name": "Switches and switchgear",
+   "description": "Modular switches, sockets, changeovers and main switches.",
+   "image": "/static/img/cat-switches-and-switchgear.svg",
+   "best_selling": true,
+   "active": true
+  }
+ ],
+ "products": [
+  {
+   "id": "p001",
+   "slug": "polycab-fr-pvc-house-wire-1-0-sq-mm",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Polycab FR PVC house wire 1.0 sq mm",
+   "brand_slug": "polycab",
+   "category_slug": "wires-and-cables",
+   "specs": {
+    "Size": "1.0 sq mm",
+    "Conductor": "Copper",
+    "Insulation": "FR PVC",
+    "Length": "90 m coil",
+    "Colours": "Red, black, yellow, blue, green"
+   },
+   "unit": "per 90 m coil",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p002",
+   "slug": "polycab-fr-pvc-house-wire-1-5-sq-mm",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Polycab FR PVC house wire 1.5 sq mm",
+   "brand_slug": "polycab",
+   "category_slug": "wires-and-cables",
+   "specs": {
+    "Size": "1.5 sq mm",
+    "Conductor": "Copper",
+    "Insulation": "FR PVC",
+    "Length": "90 m coil",
+    "Colours": "Red, black, yellow, blue, green"
+   },
+   "unit": "per 90 m coil",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p003",
+   "slug": "polycab-fr-pvc-house-wire-2-5-sq-mm",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Polycab FR PVC house wire 2.5 sq mm",
+   "brand_slug": "polycab",
+   "category_slug": "wires-and-cables",
+   "specs": {
+    "Size": "2.5 sq mm",
+    "Conductor": "Copper",
+    "Insulation": "FR PVC",
+    "Length": "90 m coil",
+    "Colours": "Red, black, yellow, blue, green"
+   },
+   "unit": "per 90 m coil",
+   "bulk_available": true,
+   "best_selling": true
+  },
+  {
+   "id": "p004",
+   "slug": "polycab-fr-pvc-house-wire-4-sq-mm",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Polycab FR PVC house wire 4 sq mm",
+   "brand_slug": "polycab",
+   "category_slug": "wires-and-cables",
+   "specs": {
+    "Size": "4 sq mm",
+    "Conductor": "Copper",
+    "Insulation": "FR PVC",
+    "Length": "90 m coil",
+    "Colours": "Red, black, yellow, blue, green"
+   },
+   "unit": "per 90 m coil",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p005",
+   "slug": "polycab-fr-pvc-house-wire-6-sq-mm",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Polycab FR PVC house wire 6 sq mm",
+   "brand_slug": "polycab",
+   "category_slug": "wires-and-cables",
+   "specs": {
+    "Size": "6 sq mm",
+    "Conductor": "Copper",
+    "Insulation": "FR PVC",
+    "Length": "90 m coil",
+    "Colours": "Red, black, yellow, blue, green"
+   },
+   "unit": "per 90 m coil",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p006",
+   "slug": "kei-hr-fr-house-wire-1-5-sq-mm",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "KEI HR FR house wire 1.5 sq mm",
+   "brand_slug": "kei",
+   "category_slug": "wires-and-cables",
+   "specs": {
+    "Size": "1.5 sq mm",
+    "Conductor": "Copper",
+    "Insulation": "HR FR PVC",
+    "Length": "90 m coil"
+   },
+   "unit": "per 90 m coil",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p007",
+   "slug": "kei-hr-fr-house-wire-2-5-sq-mm",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "KEI HR FR house wire 2.5 sq mm",
+   "brand_slug": "kei",
+   "category_slug": "wires-and-cables",
+   "specs": {
+    "Size": "2.5 sq mm",
+    "Conductor": "Copper",
+    "Insulation": "HR FR PVC",
+    "Length": "90 m coil"
+   },
+   "unit": "per 90 m coil",
+   "bulk_available": true,
+   "best_selling": true
+  },
+  {
+   "id": "p008",
+   "slug": "havells-fr-lsh-house-wire-2-5-sq-mm",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Havells FR LSH house wire 2.5 sq mm",
+   "brand_slug": "havells",
+   "category_slug": "wires-and-cables",
+   "specs": {
+    "Size": "2.5 sq mm",
+    "Conductor": "Copper",
+    "Insulation": "FR-LSH PVC",
+    "Length": "90 m coil"
+   },
+   "unit": "per 90 m coil",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p009",
+   "slug": "polycab-armoured-cable-4-core-16-sq-mm",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Polycab armoured cable 4 core 16 sq mm",
+   "brand_slug": "polycab",
+   "category_slug": "wires-and-cables",
+   "specs": {
+    "Size": "16 sq mm",
+    "Cores": "4",
+    "Conductor": "Aluminium",
+    "Armour": "Galvanised steel strip"
+   },
+   "unit": "per metre",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p010",
+   "slug": "kei-submersible-flat-cable-3-core-2-5-sq-mm",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "KEI submersible flat cable 3 core 2.5 sq mm",
+   "brand_slug": "kei",
+   "category_slug": "wires-and-cables",
+   "specs": {
+    "Size": "2.5 sq mm",
+    "Cores": "3",
+    "Use": "Submersible pumps"
+   },
+   "unit": "per metre",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p011",
+   "slug": "hpl-flexible-cable-3-core-1-5-sq-mm",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "HPL flexible cable 3 core 1.5 sq mm",
+   "brand_slug": "hpl",
+   "category_slug": "wires-and-cables",
+   "specs": {
+    "Size": "1.5 sq mm",
+    "Cores": "3",
+    "Conductor": "Copper"
+   },
+   "unit": "per metre",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p012",
+   "slug": "havells-led-bulb-9-w",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Havells LED bulb 9 W",
+   "brand_slug": "havells",
+   "category_slug": "indoor-lighting",
+   "specs": {
+    "Power": "9 W",
+    "Base": "B22",
+    "Colour": "Cool daylight 6500 K"
+   },
+   "unit": "per piece",
+   "bulk_available": true,
+   "best_selling": true
+  },
+  {
+   "id": "p013",
+   "slug": "polycab-led-batten-20-w-4-ft",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Polycab LED batten 20 W, 4 ft",
+   "brand_slug": "polycab",
+   "category_slug": "indoor-lighting",
+   "specs": {
+    "Power": "20 W",
+    "Length": "4 ft",
+    "Colour": "Cool daylight 6500 K"
+   },
+   "unit": "per piece",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p014",
+   "slug": "anchor-led-round-panel-15-w",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Anchor LED round panel 15 W",
+   "brand_slug": "anchor",
+   "category_slug": "indoor-lighting",
+   "specs": {
+    "Power": "15 W",
+    "Shape": "Round, recessed",
+    "Colour": "Warm white 3000 K"
+   },
+   "unit": "per piece",
+   "bulk_available": false,
+   "best_selling": false
+  },
+  {
+   "id": "p015",
+   "slug": "hpl-led-downlight-12-w",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "HPL LED downlight 12 W",
+   "brand_slug": "hpl",
+   "category_slug": "indoor-lighting",
+   "specs": {
+    "Power": "12 W",
+    "Cut-out": "125 mm",
+    "Colour": "Neutral white 4000 K"
+   },
+   "unit": "per piece",
+   "bulk_available": false,
+   "best_selling": false
+  },
+  {
+   "id": "p016",
+   "slug": "benlo-led-strip-light-5-m",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Benlo LED strip light 5 m",
+   "brand_slug": "benlo",
+   "category_slug": "indoor-lighting",
+   "specs": {
+    "Length": "5 m",
+    "Power": "12 V",
+    "Colour": "Warm white"
+   },
+   "unit": "per roll",
+   "bulk_available": false,
+   "best_selling": false
+  },
+  {
+   "id": "p017",
+   "slug": "havells-led-surface-panel-18-w-square",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Havells LED surface panel 18 W, square",
+   "brand_slug": "havells",
+   "category_slug": "indoor-lighting",
+   "specs": {
+    "Power": "18 W",
+    "Shape": "Square, surface",
+    "Colour": "Cool daylight 6500 K"
+   },
+   "unit": "per piece",
+   "bulk_available": false,
+   "best_selling": false
+  },
+  {
+   "id": "p018",
+   "slug": "benlo-decorative-wall-light",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Benlo decorative wall light",
+   "brand_slug": "benlo",
+   "category_slug": "indoor-lighting",
+   "specs": {
+    "Finish": "Black and gold",
+    "Lamp": "E27, bulb not included"
+   },
+   "unit": "per piece",
+   "bulk_available": false,
+   "best_selling": false
+  },
+  {
+   "id": "p019",
+   "slug": "havells-led-street-light-30-w",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Havells LED street light 30 W",
+   "brand_slug": "havells",
+   "category_slug": "outdoor-lighting",
+   "specs": {
+    "Power": "30 W",
+    "Protection": "IP65",
+    "Body": "Die-cast aluminium"
+   },
+   "unit": "per piece",
+   "bulk_available": true,
+   "best_selling": true
+  },
+  {
+   "id": "p020",
+   "slug": "hpl-led-street-light-45-w",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "HPL LED street light 45 W",
+   "brand_slug": "hpl",
+   "category_slug": "outdoor-lighting",
+   "specs": {
+    "Power": "45 W",
+    "Protection": "IP66",
+    "Use": "Roads and colonies"
+   },
+   "unit": "per piece",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p021",
+   "slug": "polycab-led-flood-light-50-w",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Polycab LED flood light 50 W",
+   "brand_slug": "polycab",
+   "category_slug": "outdoor-lighting",
+   "specs": {
+    "Power": "50 W",
+    "Protection": "IP65",
+    "Beam": "120 degrees"
+   },
+   "unit": "per piece",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p022",
+   "slug": "benlo-led-gate-light",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Benlo LED gate light",
+   "brand_slug": "benlo",
+   "category_slug": "outdoor-lighting",
+   "specs": {
+    "Power": "9 W",
+    "Protection": "IP54",
+    "Finish": "Black"
+   },
+   "unit": "per piece",
+   "bulk_available": false,
+   "best_selling": false
+  },
+  {
+   "id": "p023",
+   "slug": "anchor-led-wall-light-outdoor-10-w",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Anchor LED wall light outdoor 10 W",
+   "brand_slug": "anchor",
+   "category_slug": "outdoor-lighting",
+   "specs": {
+    "Power": "10 W",
+    "Protection": "IP65"
+   },
+   "unit": "per piece",
+   "bulk_available": false,
+   "best_selling": false
+  },
+  {
+   "id": "p024",
+   "slug": "havells-led-flood-light-100-w",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Havells LED flood light 100 W",
+   "brand_slug": "havells",
+   "category_slug": "outdoor-lighting",
+   "specs": {
+    "Power": "100 W",
+    "Protection": "IP66",
+    "Beam": "110 degrees"
+   },
+   "unit": "per piece",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p025",
+   "slug": "havells-mcb-single-pole-16-a-c-curve",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Havells MCB single pole 16 A, C curve",
+   "brand_slug": "havells",
+   "category_slug": "mcbs-and-distribution-boards",
+   "specs": {
+    "Rating": "16 A",
+    "Poles": "Single pole",
+    "Curve": "C",
+    "Breaking capacity": "10 kA"
+   },
+   "unit": "per piece",
+   "bulk_available": true,
+   "best_selling": true
+  },
+  {
+   "id": "p026",
+   "slug": "polycab-mcb-double-pole-32-a",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Polycab MCB double pole 32 A",
+   "brand_slug": "polycab",
+   "category_slug": "mcbs-and-distribution-boards",
+   "specs": {
+    "Rating": "32 A",
+    "Poles": "Double pole",
+    "Curve": "C"
+   },
+   "unit": "per piece",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p027",
+   "slug": "hpl-rccb-40-a-30-ma",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "HPL RCCB 40 A, 30 mA",
+   "brand_slug": "hpl",
+   "category_slug": "mcbs-and-distribution-boards",
+   "specs": {
+    "Rating": "40 A",
+    "Sensitivity": "30 mA",
+    "Poles": "Double pole"
+   },
+   "unit": "per piece",
+   "bulk_available": false,
+   "best_selling": false
+  },
+  {
+   "id": "p028",
+   "slug": "havells-8-way-distribution-board",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Havells 8 way distribution board",
+   "brand_slug": "havells",
+   "category_slug": "mcbs-and-distribution-boards",
+   "specs": {
+    "Ways": "8",
+    "Type": "Single phase, double door"
+   },
+   "unit": "per piece",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p029",
+   "slug": "anchor-mcb-single-pole-6-a",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Anchor MCB single pole 6 A",
+   "brand_slug": "anchor",
+   "category_slug": "mcbs-and-distribution-boards",
+   "specs": {
+    "Rating": "6 A",
+    "Poles": "Single pole",
+    "Curve": "B"
+   },
+   "unit": "per piece",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p030",
+   "slug": "polycab-tpn-distribution-board-4-way",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Polycab TPN distribution board 4 way",
+   "brand_slug": "polycab",
+   "category_slug": "mcbs-and-distribution-boards",
+   "specs": {
+    "Ways": "4",
+    "Type": "Three phase TPN"
+   },
+   "unit": "per piece",
+   "bulk_available": false,
+   "best_selling": false
+  },
+  {
+   "id": "p031",
+   "slug": "hpl-isolator-63-a-double-pole",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "HPL isolator 63 A, double pole",
+   "brand_slug": "hpl",
+   "category_slug": "mcbs-and-distribution-boards",
+   "specs": {
+    "Rating": "63 A",
+    "Poles": "Double pole"
+   },
+   "unit": "per piece",
+   "bulk_available": false,
+   "best_selling": false
+  },
+  {
+   "id": "p032",
+   "slug": "anchor-modular-switch-6-a",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Anchor modular switch 6 A",
+   "brand_slug": "anchor",
+   "category_slug": "switches-and-switchgear",
+   "specs": {
+    "Rating": "6 A",
+    "Type": "One way, modular",
+    "Colour": "White"
+   },
+   "unit": "per piece",
+   "bulk_available": true,
+   "best_selling": true
+  },
+  {
+   "id": "p033",
+   "slug": "anchor-modular-socket-16-a",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Anchor modular socket 16 A",
+   "brand_slug": "anchor",
+   "category_slug": "switches-and-switchgear",
+   "specs": {
+    "Rating": "16 A",
+    "Type": "6 pin, modular",
+    "Colour": "White"
+   },
+   "unit": "per piece",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p034",
+   "slug": "havells-modular-switch-16-a",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Havells modular switch 16 A",
+   "brand_slug": "havells",
+   "category_slug": "switches-and-switchgear",
+   "specs": {
+    "Rating": "16 A",
+    "Type": "One way, modular"
+   },
+   "unit": "per piece",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p035",
+   "slug": "hpl-changeover-switch-63-a",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "HPL changeover switch 63 A",
+   "brand_slug": "hpl",
+   "category_slug": "switches-and-switchgear",
+   "specs": {
+    "Rating": "63 A",
+    "Poles": "Four pole",
+    "Use": "Mains and generator"
+   },
+   "unit": "per piece",
+   "bulk_available": false,
+   "best_selling": false
+  },
+  {
+   "id": "p036",
+   "slug": "polycab-main-switch-32-a",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Polycab main switch 32 A",
+   "brand_slug": "polycab",
+   "category_slug": "switches-and-switchgear",
+   "specs": {
+    "Rating": "32 A",
+    "Type": "Double pole, iron clad"
+   },
+   "unit": "per piece",
+   "bulk_available": false,
+   "best_selling": false
+  },
+  {
+   "id": "p037",
+   "slug": "benlo-modular-plate-8-module",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Benlo modular plate 8 module",
+   "brand_slug": "benlo",
+   "category_slug": "switches-and-switchgear",
+   "specs": {
+    "Size": "8 module",
+    "Finish": "Glossy white"
+   },
+   "unit": "per piece",
+   "bulk_available": true,
+   "best_selling": false
+  },
+  {
+   "id": "p038",
+   "slug": "anchor-bell-push-switch",
+   "price_inr": null,
+   "image": "",
+   "active": true,
+   "updated_at": "2026-10-31T00:00:00+00:00",
+   "name": "Anchor bell push switch",
+   "brand_slug": "anchor",
+   "category_slug": "switches-and-switchgear",
+   "specs": {
+    "Rating": "6 A",
+    "Type": "Bell push, modular"
+   },
+   "unit": "per piece",
+   "bulk_available": false,
+   "best_selling": false
+  }
+ ]
+}

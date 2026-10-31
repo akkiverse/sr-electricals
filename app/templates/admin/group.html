@@ -1,0 +1,25 @@
+{% extends "admin/_layout.html" %}
+{% block admin %}
+{% set label = "brand" if kind == "brands" else "category" %}
+<p class="muted">{% if kind == "brands" %}The home page shows shown brands in this order under "Brands we deal in".{% else %}Categories marked best-selling show on the home page in this order.{% endif %}</p>
+<a class="btn btn-primary" href="/admin/{{ kind }}/new">{{ icon("plus", 18) }} Add a {{ label }}</a>
+<ul class="alist">
+  {% for it in items %}
+  <li class="arow">
+    {% if kind == "categories" %}<img src="{{ it.image or '/static/img/cat-generic.svg' }}" alt="" width="56" height="42" loading="lazy">{% else %}<span class="arow-mark" aria-hidden="true">{{ it.name[:2] }}</span>{% endif %}
+    <div class="arow-main">
+      <strong>{{ it.name }}</strong>
+      <small>{% if it.active %}<span class="ok">Shown</span>{% else %}<span class="off">Hidden</span>{% endif %}{% if kind == "categories" and it.best_selling %} · Best-selling{% endif %}</small>
+    </div>
+    <div class="arow-actions">
+      <form method="post" action="/admin/{{ kind }}/{{ it.slug }}/move"><input type="hidden" name="direction" value="up"><button class="icon-btn" {% if loop.first %}disabled{% endif %} aria-label="Move {{ it.name }} up">{{ icon("up", 18) }}</button></form>
+      <form method="post" action="/admin/{{ kind }}/{{ it.slug }}/move"><input type="hidden" name="direction" value="down"><button class="icon-btn" {% if loop.last %}disabled{% endif %} aria-label="Move {{ it.name }} down">{{ icon("down", 18) }}</button></form>
+      <a class="btn btn-ghost sm" href="/admin/{{ kind }}/{{ it.slug }}">{{ icon("edit", 16) }} Edit</a>
+      <a class="btn btn-danger sm" href="/admin/{{ kind }}/{{ it.slug }}/remove">{{ icon("trash", 16) }} Remove</a>
+    </div>
+  </li>
+  {% else %}
+  <li class="empty"><p>Nothing here yet.</p></li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% from "_icons.html" import icon %}
+{% set b = cat.brand(p.brand_slug) %}{% set c = cat.category(p.category_slug) %}
+<li class="pcard">
+  <a class="pcard-link" href="/products/{{ p.slug }}">
+    <span class="pcard-img"><img src="{{ image_for(p) }}" alt="{{ p.name }}" loading="lazy" width="320" height="240"></span>
+    <span class="pcard-body">
+      <span class="pcard-brand">{{ b.name }}</span>
+      <span class="pcard-name">{{ p.name }}</span>
+      <span class="pcard-meta">{{ c.name }}</span>
+      <span class="pcard-foot">
+        {% if p.price_inr %}<span class="price">{{ p.price_inr|inr }}{% if p.unit %} <small>{{ p.unit }}</small>{% endif %}</span>
+        {% else %}<span class="price-ask">Price on request</span>{% endif %}
+        {% if p.bulk_available %}<span class="tag">Bulk available</span>{% endif %}
+      </span>
+    </span>
+  </a>
+  <button type="button" class="pcard-add" data-add-quote data-slug="{{ p.slug }}" data-name="{{ p.name }}" data-brand="{{ b.name }}" aria-label="Add {{ p.name }} to quote list">{{ icon("plus", 18) }}<span>Add</span></button>
+</li>
