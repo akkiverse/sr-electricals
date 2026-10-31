@@ -1,0 +1,11 @@
+{
+  "name": "sr-electricals-ui-tests",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Unit tests for the browser quote list (public/static/quote-core.js). No dependencies.",
+  "scripts": {
+    "test": "node --test tests/js/quote-core.test.js",
+    "build": "node -e \"require('./public/static/quote-core.js'); console.log('quote-core.js loads')\""
+  },
+  "engines": { "node": ">=20" }
+}

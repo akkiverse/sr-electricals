@@ -113,7 +113,7 @@
         var qty = row.querySelector("[data-f=qty]");
         qty.value = it.qty; qty.id = "qty-" + i;
         var lab = row.querySelector("[data-f=qlabel]");
-        lab.htmlFor = qty.id; lab.textContent = "Quantity of " + it.name;
+        lab.htmlFor = qty.id; lab.textContent = "Quantity of " + it.name; qty.setAttribute("aria-label", "Quantity of " + it.name);
         row.querySelector("[data-remove]").setAttribute("aria-label", "Remove " + it.name);
         row.dataset.slug = it.slug;
         list.appendChild(row);
