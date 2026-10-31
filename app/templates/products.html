@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="wrap catalogue">
+  <h1 class="page-title" id="results-title">{{ heading }}</h1>
+  <form class="search" action="/products" method="get" role="search"
+        hx-get="/products" hx-target="#results" hx-push-url="true" hx-trigger="submit, input changed delay:350ms from:#q, change from:select">
+    <label for="q" class="search-label">Search products</label>
+    <div class="search-row">
+      <span class="search-icon">{{ icon("search", 20) }}</span>
+      <input id="q" name="q" type="search" value="{{ q }}" placeholder="Try 2.5 mm, MCB or Polycab" autocomplete="off" maxlength="80">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+    <div class="filters">
+      <div class="field-inline">
+        <label for="category">Category</label>
+        <select id="category" name="category">
+          <option value="">All categories</option>
+          {% for c in cat.shown_categories() %}<option value="{{ c.slug }}" {% if c.slug == sel_category %}selected{% endif %}>{{ c.name }}</option>{% endfor %}
+        </select>
+      </div>
+      <div class="field-inline">
+        <label for="brand">Brand</label>
+        <select id="brand" name="brand">
+          <option value="">All brands</option>
+          {% for b in cat.shown_brands() %}<option value="{{ b.slug }}" {% if b.slug == sel_brand %}selected{% endif %}>{{ b.name }}</option>{% endfor %}
+        </select>
+      </div>
+    </div>
+  </form>
+  <div id="results" aria-live="polite">{% include "partials/results.html" %}</div>
+</section>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "admin/_layout.html" %}
+{% from "admin/_field.html" import text, check, err %}
+{% block admin %}
+<form class="aform" method="post" action="/admin/{{ kind }}{{ '/' ~ item.slug if item else '' }}" enctype="multipart/form-data" novalidate>
+  {{ text("name", label ~ " name", v.name, errors, attrs='maxlength="60" required') }}
+  {% if kind == "categories" %}
+  <div class="field">
+    <label for="f-description">Short description <span class="muted">(optional)</span></label>
+    <textarea id="f-description" name="description" rows="3" maxlength="300">{{ v.description }}</textarea>
+  </div>
+  <div class="field{% if errors.get('image') %} has-error{% endif %}">
+    <label for="f-image">Picture <span class="muted">(JPEG, PNG or WebP, up to 2 MB)</span></label>
+    {% if item and item.image %}<img class="thumb" src="{{ item.image }}" alt="Current picture for {{ item.name }}" width="120" height="90">{% endif %}
+    <input id="f-image" name="image" type="file" accept="image/jpeg,image/png,image/webp">
+    {{ err("image", errors) }}
+    {% if item and item.image %}{{ check("remove_image", "Remove the current picture", False) }}{% endif %}
+  </div>
+  {% endif %}
+  <fieldset class="checks"><legend>Options</legend>
+    {{ check("active", "Show on the site", v.active) }}
+    {% if kind == "categories" %}{{ check("best_selling", "Best-selling (shows on the home page)", v.best_selling) }}{% endif %}
+  </fieldset>
+  <div class="form-actions">
+    <button class="btn btn-primary" type="submit">{{ icon("check", 18) }} Save {{ label|lower }}</button>
+    <a class="btn btn-ghost" href="/admin/{{ kind }}">Cancel</a>
+  </div>
+</form>
+{% endblock %}

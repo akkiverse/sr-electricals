@@ -1,0 +1,12 @@
+{% macro text(name, label, value, errors, hint="", type="text", attrs="") -%}
+<div class="field{% if errors.get(name) %} has-error{% endif %}">
+  <label for="f-{{ name }}">{{ label }}</label>
+  {% if hint %}<p class="hint" id="h-{{ name }}">{{ hint }}</p>{% endif %}
+  <input id="f-{{ name }}" name="{{ name }}" type="{{ type }}" value="{{ value }}" {{ attrs|safe }}{% if hint or errors.get(name) %} aria-describedby="{% if hint %}h-{{ name }} {% endif %}{% if errors.get(name) %}e-{{ name }}{% endif %}"{% endif %}{% if errors.get(name) %} aria-invalid="true"{% endif %}>
+  {% if errors.get(name) %}<p class="field-error" id="e-{{ name }}">{{ errors[name] }}</p>{% endif %}
+</div>
+{%- endmacro %}
+{% macro check(name, label, checked) -%}
+<label class="check"><input type="checkbox" name="{{ name }}" value="true" {% if checked %}checked{% endif %}> <span>{{ label }}</span></label>
+{%- endmacro %}
+{% macro err(name, errors) -%}{% if errors.get(name) %}<p class="field-error" id="e-{{ name }}">{{ errors[name] }}</p>{% endif %}{%- endmacro %}

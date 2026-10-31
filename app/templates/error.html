@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="wrap empty page-error">
+  <span class="empty-icon">{{ icon("bolt", 32) }}</span>
+  <h1>{{ title }}</h1>
+  <p>{{ message }}</p>
+  <div class="empty-actions">
+    <a class="btn btn-primary" href="/">{{ icon("home", 18) }} Home</a>
+    <a class="btn btn-ghost" href="/products">{{ icon("search", 18) }} All products</a>
+    <a class="btn btn-ghost" href="{{ s.tel_link }}">{{ icon("phone", 18) }} Call us</a>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block main %}
+<article class="wrap product">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/products">Products</a> <span aria-hidden="true">/</span> <a href="/category/{{ category.slug }}">{{ category.name }}</a></nav>
+  <div class="product-grid">
+    <div class="product-img"><img src="{{ image_for(p) }}" alt="{{ p.name }}" width="640" height="480"></div>
+    <div class="product-info">
+      <p class="pcard-brand"><a href="/brand/{{ brand.slug }}">{{ brand.name }}</a></p>
+      <h1>{{ p.name }}</h1>
+      <p class="muted">{{ category.name }}</p>
+      <div class="product-tags">
+        {% if p.price_inr %}<span class="price big">{{ p.price_inr|inr }}{% if p.unit %} <small>{{ p.unit }}</small>{% endif %}</span>
+        {% else %}<span class="price-ask big">Price on request{% if p.unit %} <small>({{ p.unit }})</small>{% endif %}</span>{% endif %}
+        {% if p.bulk_available %}<span class="tag">Bulk available</span>{% endif %}
+      </div>
+      {% if p.specs %}
+      <table class="specs"><caption class="sr-only">Specifications</caption>
+        <tbody>{% for k, v in p.specs.items() %}<tr><th scope="row">{{ k }}</th><td>{{ v }}</td></tr>{% endfor %}</tbody>
+      </table>
+      {% endif %}
+      <form class="add-form" data-add-form data-slug="{{ p.slug }}" data-name="{{ p.name }}" data-brand="{{ brand.name }}" novalidate>
+        <label for="qty">Quantity</label>
+        <div class="qty-row">
+          <div class="stepper">
+            <button type="button" class="step" data-step="-1" aria-label="One less">{{ icon("minus", 18) }}</button>
+            <input id="qty" name="qty" type="number" inputmode="numeric" min="1" max="9999" step="1" value="1" aria-describedby="qty-error">
+            <button type="button" class="step" data-step="1" aria-label="One more">{{ icon("plus", 18) }}</button>
+          </div>
+          <button type="submit" class="btn btn-primary">{{ icon("list", 18) }} Add to quote</button>
+        </div>
+        <p class="field-error" id="qty-error" data-error hidden></p>
+      </form>
+      <a class="btn btn-wa wide" rel="noopener" target="_blank" href="{{ s.wa_link }}?text={{ ('Hello ' ~ s.shop_name ~ ', I would like a rate for ' ~ p.name ~ ' (' ~ brand.name ~ ').')|urlencode }}">{{ icon("chat", 18) }} Ask on WhatsApp about this item</a>
+    </div>
+  </div>
+  {% if related %}
+  <section class="section" aria-labelledby="rel-h">
+    <h2 id="rel-h">More {{ category.name|lower }}</h2>
+    <ul class="pgrid">{% for p in related %}{% include "partials/product_card.html" %}{% endfor %}</ul>
+  </section>
+  {% endif %}
+</article>
+{% endblock %}

@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block body_class %}page-home{% endblock %}
+{% block main %}
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="hero-place">{{ icon("pin", 16) }} Tiwary Chowk, College Road, Deoghar</p>
+      <h1>{{ s.shop_name }}</h1>
+      <p class="hero-tag">{{ s.tagline }}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="{{ s.tel_link }}">{{ icon("phone", 18) }} Call {{ s.phone_display }}</a>
+        <a class="btn btn-wa" href="{{ s.wa_link }}" rel="noopener" target="_blank">{{ icon("chat", 18) }} WhatsApp us</a>
+        <a class="btn btn-ghost" href="/products">Browse products {{ icon("arrow", 18) }}</a>
+      </div>
+      <p class="hero-hours">{{ icon("clock", 16) }} Open {{ s.hours_text }}</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 320 300" class="coil">
+        <g fill="none" stroke-linecap="round">
+          <path class="w w1" d="M20 250 C 90 250, 90 60, 160 60 S 240 210, 300 200"/>
+          <path class="w w2" d="M20 268 C 100 268, 100 90, 165 92 S 250 236, 300 226"/>
+          <path class="w w3" d="M20 232 C 80 232, 82 30, 156 28 S 230 184, 300 174"/>
+        </g>
+        <path class="spark" d="M196 112 l-26 40 h20 l-8 34 30-46 h-20 z"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="brands-h">
+  <div class="wrap">
+    <div class="section-head"><h2 id="brands-h">Brands we deal in</h2><a href="/products" class="more">All products {{ icon("arrow", 16) }}</a></div>
+    <ul class="brands" data-brands>
+      {% for b in cat.shown_brands() %}
+      <li><a class="brand-chip" href="/brand/{{ b.slug }}" style="--i: {{ loop.index0 }}"><span class="stripe" aria-hidden="true"></span>{{ b.name }}</a></li>
+      {% else %}
+      <li class="muted">Brands will be listed here soon.</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section-alt" aria-labelledby="cats-h">
+  <div class="wrap">
+    <div class="section-head"><h2 id="cats-h">Best-selling categories</h2></div>
+    <ul class="cats" data-best-categories>
+      {% for c in cat.best_selling_categories() %}
+      <li><a class="ccard" href="/category/{{ c.slug }}">
+        <span class="ccard-img"><img src="{{ c.image or '/static/img/cat-generic.svg' }}" alt="{{ c.name }}" loading="lazy" width="200" height="150"></span>
+        <span class="ccard-name">{{ c.name }}</span>
+        {% if c.description %}<span class="ccard-desc">{{ c.description }}</span>{% endif %}
+        <span class="ccard-go">See range {{ icon("arrow", 16) }}</span>
+      </a></li>
+      {% else %}
+      <li class="muted">Our best-selling categories will appear here soon.</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% set popular = cat.best_selling_products() %}
+{% if popular %}
+<section class="section" aria-labelledby="pop-h">
+  <div class="wrap">
+    <div class="section-head"><h2 id="pop-h">Best-selling items</h2><a href="/products" class="more">See everything {{ icon("arrow", 16) }}</a></div>
+    <ul class="pgrid" data-best-products>
+      {% for p in popular[:8] %}{% include "partials/product_card.html" %}{% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+
+<section class="section section-alt" aria-labelledby="serve-h">
+  <div class="wrap">
+    <div class="section-head"><h2 id="serve-h">Who we serve</h2></div>
+    <ul class="serve">
+      {% set serve_icons = ["store", "building", "truck", "home"] %}
+      {% set serve_text = ["Stock for your counter at trade rates, from one supplier.", "Full site lists, bulk wire and cable, quick quotes on WhatsApp.", "Tender-ready quantities of lights, cable and switchgear.", "Help choosing the right light, switch or wire for your home."] %}
+      {% for who in s.serves %}
+      <li class="serve-item">{{ icon(serve_icons[loop.index0 % 4], 26) }}<h3>{{ who }}</h3><p>{{ serve_text[loop.index0 % 4] }}</p></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="about-h" id="about">
+  <div class="wrap about">
+    <div class="owner">
+      {% if s.owner_photo %}
+      <img class="owner-photo" src="{{ s.owner_photo }}" alt="{{ s.owner_name }}, owner of {{ s.shop_name }}" width="240" height="240" loading="lazy">
+      {% else %}
+      <span class="owner-photo owner-initials" role="img" aria-label="{{ s.owner_name }}">{{ s.owner_initials }}</span>
+      {% endif %}
+      <p class="owner-name">{{ s.owner_name }}<small>Owner</small></p>
+    </div>
+    <div>
+      <h2 id="about-h">About {{ s.shop_name }}</h2>
+      <p class="story">{{ s.story }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" aria-labelledby="visit-h" id="visit">
+  <div class="wrap visit">
+    <div class="visit-info">
+      <h2 id="visit-h">Visit us</h2>
+      <p class="visit-row">{{ icon("pin", 20) }}<address>{{ s.address }}</address></p>
+      <p class="visit-row">{{ icon("clock", 20) }}<span>{{ s.hours_text }}</span></p>
+      <p class="visit-row">{{ icon("phone", 20) }}<a href="{{ s.tel_link }}">{{ s.phone_display }}</a></p>
+      <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination={{ s.map_query|urlencode }}" rel="noopener" target="_blank">{{ icon("pin", 18) }} Get directions</a>
+    </div>
+    <div class="map">
+      <iframe title="Map showing {{ s.shop_name }}, Deoghar" src="https://www.google.com/maps?q={{ s.map_query|urlencode }}&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+{% endblock %}

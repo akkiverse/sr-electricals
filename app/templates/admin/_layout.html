@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% set noindex = True %}
+{% block body_class %}page-admin{% endblock %}
+{% block actionbar %}{% endblock %}
+{% block main %}
+<div class="wrap admin">
+  <nav class="admin-nav" aria-label="Admin">
+    {% set links = [("/admin", "Dashboard", "settings"), ("/admin/products", "Products", "box"), ("/admin/brands", "Brands", "tag"), ("/admin/categories", "Categories", "list"), ("/admin/settings", "Shop details", "store")] %}
+    {% for href, label, ic in links %}
+    <a href="{{ href }}" {% if path == href or (href != "/admin" and path.startswith(href)) %}aria-current="page"{% endif %}>{{ icon(ic, 18) }} {{ label }}</a>
+    {% endfor %}
+    <a href="/auth/logout" class="signout">Sign out</a>
+  </nav>
+  {% if not writable %}
+  <div class="banner banner-warn" role="alert"><strong>Read-only:</strong> {{ no_db_message }} You can look around, but changes won't be saved yet.</div>
+  {% endif %}
+  {% if saved %}
+  <div class="banner banner-ok" role="status">{{ icon("check", 18) }} {% if saved == "removed" %}Removed. It no longer shows on the site.{% elif saved == "order" %}New order saved.{% elif saved == "photo" %}Photo saved.{% else %}Saved. The site shows the change now.{% endif %}</div>
+  {% endif %}
+  {% if form_error %}<div class="banner banner-warn" role="alert">{{ form_error }}</div>{% endif %}
+  <h1 class="page-title">{{ heading }}</h1>
+  {% block admin %}{% endblock %}
+</div>
+{% endblock %}

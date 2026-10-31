@@ -1,0 +1,16 @@
+{% extends "admin/_layout.html" %}
+{% block admin %}
+<p class="muted">Signed in as {{ user.name or "the shop owner" }}. Everything you change here shows on the public site straight away.</p>
+<ul class="stats">
+  <li><a href="/admin/products"><strong>{{ counts.products }}</strong> products <small>{{ counts.shown }} shown on the site</small></a></li>
+  <li><a href="/admin/brands"><strong>{{ counts.brands }}</strong> brands</a></li>
+  <li><a href="/admin/categories"><strong>{{ counts.categories }}</strong> categories</a></li>
+</ul>
+<div class="admin-actions">
+  <a class="btn btn-primary" href="/admin/products/new">{{ icon("plus", 18) }} Add a product</a>
+  <a class="btn btn-ghost" href="/admin/brands/new">{{ icon("plus", 18) }} Add a brand</a>
+  <a class="btn btn-ghost" href="/admin/settings">{{ icon("image", 18) }} Change your photo or shop details</a>
+  <a class="btn btn-ghost" href="/admin/export">{{ icon("download", 18) }} Download a backup (JSON)</a>
+  <a class="btn btn-ghost" href="/" target="_blank" rel="noopener">See the site {{ icon("arrow", 18) }}</a>
+</div>
+{% endblock %}
