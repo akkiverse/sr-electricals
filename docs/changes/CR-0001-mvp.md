@@ -1,6 +1,6 @@
 # CR-0001: First version (MVP)
 
-- **Status:** In progress
+- **Status:** In review
 - **Requested by:** Founder (board notes)
 - **Date:** 2026-10-31
 - **Release:** (not yet released)
@@ -26,7 +26,10 @@ Everything is new: home page, catalogue with search and filters, category and br
 New: see [ARCHITECTURE.md](../architecture/ARCHITECTURE.md), [ADR-0002](../adr/0002-stack.md) (stack) and [ADR-0003](../adr/0003-storage.md) (storage).
 
 ## Verification
-To be filled when the build is tested.
+39 of 39 tests pass (34 pytest, 5 node), one or more per acceptance criterion; the Postgres store test passes against a local Postgres 16. Ruff lint and format are clean. A real-browser check at 360, 375 and 1280 px in light and dark found no sideways scrolling or small tap targets, and the full quote flow opened WhatsApp with the expected message. See [TEST-REPORT](../quality/TEST-REPORT.md).
 
 ## Notes
-The Vercel project is created with production deploys off until the founder approves the release.
+- The Vercel project `sr-electricals` exists with the live address `sr-electricals-akkiverse.vercel.app`; nothing goes live until the founder approves the release. Previews are private.
+- Founder's hosting note: the app runs in region `sin1` (Singapore) next to the Neon database `sr-electricals-master-db`; the database is connected through `DATABASE_URL` or `POSTGRES_URL`, never in the repo. Until it is linked the site is read-only on the seed catalogue.
+- The seed catalogue (38 items) is a typical range for these brands, not the shop's confirmed stock; the owner should review it.
+- The admin accepts the hub's default **App admin** role as well as **owner**; the `owner` role is listed in the registry entry at release.
