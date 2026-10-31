@@ -88,9 +88,9 @@ def test_ac_6_1_phone_width_no_sideways_scroll_and_44px_targets(client):
         assert '<meta name="viewport" content="width=device-width, initial-scale=1">' in client.get(path).text
     assert "overflow-x: hidden" in CSS.split("body {", 1)[1].split("}", 1)[0]
     for selector in [".btn {", ".btn.sm {", ".chip {", ".pcard-add {", ".topnav a {", ".footer-links a {", ".check {"]:
-        rule = CSS.split(selector, 1)[1].split("}", 1)[0]
-        m = re.search(r"min-height:\s*(\d+)px", rule)
-        assert m and int(m.group(1)) >= 44, selector
+        rules = [part.split("}", 1)[0] for part in CSS.split(selector)[1:]]
+        heights = [int(m.group(1)) for r in rules if (m := re.search(r"min-height:\s*(\d+)px", r))]
+        assert heights and min(heights) >= 44, selector
     for selector in [".icon-btn {", ".theme-toggle {"]:
         rule = CSS.split(selector, 1)[1].split("}", 1)[0]
         assert int(re.search(r"height:\s*(\d+)px", rule).group(1)) >= 44, selector

@@ -34,6 +34,7 @@ ignore = ["B008"]  # FastAPI declares File()/Form() in argument defaults by desi
 
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = ["E501"]  # test docstrings quote the acceptance criteria in full
+"scripts/*" = ["E501"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
