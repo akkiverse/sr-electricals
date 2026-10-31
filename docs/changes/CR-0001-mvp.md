@@ -1,9 +1,9 @@
 # CR-0001: First version (MVP)
 
-- **Status:** In review
+- **Status:** Released
 - **Requested by:** Founder (board notes)
 - **Date:** 2026-10-31
-- **Release:** (not yet released)
+- **Release:** v0.1.0
 - **Pull request:** https://github.com/akkiverse/sr-electricals/pull/1
 
 ## Why

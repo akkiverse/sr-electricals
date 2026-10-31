@@ -60,4 +60,4 @@ Also: `test_search_ignores_hidden_brand_products`, `test_admin_export_backup`, `
 - Theme toggle: switching to dark is remembered after reload.
 
 ## Releases
-Not released yet.
+- v0.1.0 (2026-10-31): first release of CR-0001, 39 of 39 tests passing.
